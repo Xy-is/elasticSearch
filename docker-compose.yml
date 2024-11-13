@@ -1,0 +1,34 @@
+version: '3'
+services:
+  elasticsearch:
+    image: bitnami/elasticsearch:8.9.0
+    container_name: elasticsearch
+    environment:
+      - ELASTICSEARCH_CLUSTER_NAME=elasticsearch-cluster
+      - ELASTICSEARCH_NODE_NAME=elasticsearch
+      - ELASTICSEARCH_NETWORK_HOST=0.0.0.0
+      - ELASTICSEARCH_USERNAME=ADMIN
+      - ELASTICSEARCH_PASSWORD=root
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - es_data:/bitnami/elasticsearch/data
+
+  postgres:
+    image: postgres:14
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  es_data:
+    driver: local
+  pg_data:
+    driver: local

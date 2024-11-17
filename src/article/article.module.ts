@@ -6,7 +6,7 @@ import { ElasticsearchModule } from '@nestjs/elasticsearch';
 @Module({
   imports: [
     ElasticsearchModule.register({
-      node: 'http://localhost:9200', // Указываем настройки подключения к Elasticsearch
+      node: 'http://localhost:9200',
       auth: {
         username: 'ADMIN',
         password: 'root',

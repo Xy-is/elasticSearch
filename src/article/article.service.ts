@@ -54,6 +54,7 @@ export class ArticleService {
       });
     }
   }
+
   async indexArticles() {
     const articles = await this.getArticles();
     for (const article of articles) {

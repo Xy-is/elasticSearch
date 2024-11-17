@@ -4,6 +4,7 @@ import { ArticleService } from './article.service';
 @Controller('article')
 export class ArticleController {
   constructor(private readonly articleSearchService: ArticleService) {}
+
   @Get()
   async search(@Query('query') query: string) {
     return await this.articleSearchService.searchArticles(query);

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>АурSearch</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+  <div>
+    <form method="GET" action="">
+      <input value="{{searchQuery}}" name="search" placeholder="Текст поиска" />
+      <button type="submit">Поиск</button>
+    </form>
+  </div>
+  <ul class="search-results">
+    {{#each searchResult}}
+      <li class="search-result-item">
+        <h2 class="search-result-title">{{this.title}}</h2>
+        <p class="search-result-author">{{this.author}}</p>
+        <p class="search-result-content">{{this.content}}</p>
+      </li>
+    {{/each}}
+  </ul>
+</body>
+</html>

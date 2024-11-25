@@ -12,7 +12,7 @@ export class ArticleService {
   ) {}
 
   async getArticles() {
-    return await this.dataSource.query(
+    return this.dataSource.query(
       'SELECT * FROM article ORDER BY created_at DESC',
     );
   }
@@ -30,7 +30,7 @@ export class ArticleService {
               filter: {
                 synonym_filter: {
                   type: 'synonym',
-                  synonyms: ['brave, courageous', 'fast, quick'],
+                  synonyms: ['быстрый, стремительный', 'введение, начало'],
                 },
               },
               analyzer: {

@@ -15,5 +15,6 @@ import { ElasticsearchModule } from '@nestjs/elasticsearch';
   ],
   controllers: [ArticleController],
   providers: [ArticleService],
+  exports: [ArticleService],
 })
 export class ArticleModule {}

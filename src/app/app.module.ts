@@ -1,21 +1,25 @@
 import { Module } from '@nestjs/common';
 import { ElasticsearchModule } from '@nestjs/elasticsearch';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ArticleModule } from '../article/article.module'; // Импортируем ArticleModule
-import { typeOrmConfig } from '../config/typeorm.config'; // Импортируем конфигурацию TypeORM
+import { ArticleModule } from '../article/article.module';
+import { typeOrmConfig } from '../config/typeorm.config';
+import * as process from 'node:process';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot(typeOrmConfig), // Инициализация подключения к базе данных
+    TypeOrmModule.forRoot(typeOrmConfig),
     ElasticsearchModule.register({
-      node: 'http://localhost:9200', // Адрес Elasticsearch
+      node: 'http://localhost:9200',
       auth: {
-        username: 'ADMIN', // Логин для подключения
-        password: 'root', // Пароль для подключения
+        username: process.env.ELASTICSEARCH_USERNAME,
+        password: process.env.ELASTICSEARCH_PASSWORD,
       },
     }),
-    ArticleModule, // Добавляем ArticleModule в imports
+    ArticleModule,
   ],
-  providers: [],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}

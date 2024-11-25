@@ -4,245 +4,154 @@ export class InsertInArticleTable1731499208379 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     const articles = [
       {
-        title: 'Introduction to NestJS',
-        author: 'Jane Doe',
+        title: 'Введение в NestJS',
+        author: 'Джейн Доу',
         content:
-          'NestJS is a framework for building efficient, scalable Node.js server-side applications.',
+          'NestJS — это фреймворк для создания эффективных и масштабируемых серверных приложений на Node.js.',
       },
       {
-        title: 'Getting Started with Kafka',
-        author: 'John Smith',
+        title: 'Начало работы с Kafka',
+        author: 'Джон Смит',
         content:
-          'Kafka is a distributed streaming platform that can handle high-throughput data pipelines.',
+          'Kafka — это распределённая стриминговая платформа, которая может обрабатывать высокопроизводительные потоки данных.',
       },
       {
-        title: 'Building a REST API with TypeScript',
-        author: 'Alice Johnson',
+        title: 'Создание REST API с использованием TypeScript',
+        author: 'Алиса Джонсон',
         content:
-          'Using TypeScript in backend development provides type safety and better tooling support.',
+          'Использование TypeScript в разработке бэкенда обеспечивает безопасность типов и улучшенную поддержку инструментов.',
       },
       {
-        title: 'Database Migrations Best Practices',
-        author: 'Bob Brown',
+        title: 'Лучшие практики миграции баз данных',
+        author: 'Боб Браун',
         content:
-          'Migrations help in keeping database schema changes versioned and maintainable.',
+          'Миграции помогают сохранять изменения в схеме базы данных версионированными и удобными для сопровождения.',
       },
       {
-        title: 'Optimizing SQL Queries',
-        author: 'Carol White',
+        title: 'Оптимизация SQL-запросов',
+        author: 'Кэрол Уайт',
         content:
-          'Efficient SQL queries can significantly improve the performance of an application.',
+          'Эффективные SQL-запросы могут значительно повысить производительность приложения.',
       },
       {
-        title: 'Microservices with Node.js',
-        author: 'Eve Black',
+        title: 'Микросервисы на Node.js',
+        author: 'Ева Блэк',
         content:
-          'Learn how to build microservices with Node.js and manage distributed systems.',
+          'Научитесь создавать микросервисы на Node.js и управлять распределёнными системами.',
       },
       {
-        title: 'GraphQL vs REST: Which to Choose?',
-        author: 'Frank Green',
-        content: 'A comparison of GraphQL and REST for building flexible APIs.',
+        title: 'GraphQL vs REST: что выбрать?',
+        author: 'Фрэнк Грин',
+        content: 'Сравнение GraphQL и REST для создания гибких API.',
       },
       {
-        title: 'Introduction to TypeORM',
-        author: 'Grace Blue',
+        title: 'Введение в TypeORM',
+        author: 'Грейс Блу',
         content:
-          'TypeORM is a powerful ORM that works well with TypeScript in Node.js projects.',
+          'TypeORM — это мощный ORM, который хорошо работает с TypeScript в проектах на Node.js.',
       },
       {
-        title: 'Scaling Node.js Applications',
-        author: 'Hank Brown',
+        title: 'Масштабирование приложений на Node.js',
+        author: 'Хэнк Браун',
         content:
-          'Discover strategies for scaling Node.js applications to handle large numbers of users.',
+          'Узнайте стратегии масштабирования приложений на Node.js для работы с большим количеством пользователей.',
       },
       {
-        title: 'CI/CD for JavaScript Projects',
-        author: 'Ivy White',
+        title: 'CI/CD для JavaScript-проектов',
+        author: 'Айви Уайт',
         content:
-          'How to set up CI/CD pipelines to automate testing and deployment.',
+          'Как настроить CI/CD пайплайны для автоматизации тестирования и развертывания.',
       },
       {
-        title: 'Understanding JWT for Authentication',
-        author: 'Jane Doe',
+        title: 'Использование JWT для аутентификации',
+        author: 'Джейн Доу',
         content:
-          'JWT (JSON Web Tokens) are used for secure, stateless authentication in web applications.',
+          'JWT (JSON Web Tokens) используются для безопасной, статической аутентификации в веб-приложениях.',
       },
       {
-        title: 'Building WebSockets with NestJS',
-        author: 'John Smith',
+        title: 'Создание WebSockets с NestJS',
+        author: 'Джон Смит',
         content:
-          'WebSockets provide real-time communication for chat and live notifications.',
+          'WebSockets обеспечивают связь в реальном времени для чатов и уведомлений.',
       },
       {
-        title: 'Using Kafka for Event-Driven Architecture',
-        author: 'Alice Johnson',
+        title: 'Использование Kafka в событийно-ориентированной архитектуре',
+        author: 'Алиса Джонсон',
         content:
-          'Kafka is often used in event-driven architecture to decouple services.',
+          'Kafka часто используется в событийно-ориентированной архитектуре для развязки сервисов.',
       },
       {
-        title: 'Managing SQL Transactions in Node.js',
-        author: 'Bob Brown',
+        title: 'Управление SQL-транзакциями в Node.js',
+        author: 'Боб Браун',
         content:
-          'Learn about SQL transactions and how to handle them in Node.js applications.',
+          'Узнайте о SQL-транзакциях и как работать с ними в приложениях на Node.js.',
       },
       {
-        title: 'Caching Strategies in NestJS',
-        author: 'Carol White',
+        title: 'Стратегии кэширования в NestJS',
+        author: 'Кэрол Уайт',
         content:
-          'Discover caching strategies for improving application performance.',
+          'Изучите стратегии кэширования для повышения производительности приложений.',
       },
       {
-        title: 'Understanding Docker and Containers',
-        author: 'Eve Black',
+        title: 'Что такое Docker и контейнеры',
+        author: 'Ева Блэк',
         content:
-          'Containers allow applications to run in isolated environments.',
+          'Контейнеры позволяют приложениям работать в изолированных средах.',
       },
       {
-        title: 'Introduction to Kubernetes',
-        author: 'Frank Green',
+        title: 'Введение в Kubernetes',
+        author: 'Фрэнк Грин',
         content:
-          'Kubernetes is an orchestration tool for managing containerized applications.',
+          'Kubernetes — это инструмент для оркестрации контейнеризированных приложений.',
       },
       {
-        title: 'Using Redis for Caching',
-        author: 'Grace Blue',
+        title: 'Использование Redis для кэширования',
+        author: 'Грейс Блу',
         content:
-          'Redis is a fast, in-memory database commonly used for caching data.',
+          'Redis — это быстрая, работающая в памяти база данных, часто используемая для кэширования данных.',
       },
       {
-        title: 'Deploying Node.js with Docker',
-        author: 'Hank Brown',
+        title: 'Развертывание Node.js приложений с Docker',
+        author: 'Хэнк Браун',
         content:
-          'A guide on how to containerize and deploy Node.js applications using Docker.',
+          'Руководство по контейнеризации и развертыванию приложений Node.js с использованием Docker.',
       },
       {
-        title: 'Server-Side Rendering with Next.js',
-        author: 'Ivy White',
+        title: 'Серверный рендеринг с Next.js',
+        author: 'Айви Уайт',
         content:
-          'Next.js provides server-side rendering for faster loading and SEO-friendly web apps.',
+          'Next.js предоставляет серверный рендеринг для более быстрой загрузки и SEO-дружественных веб-приложений.',
       },
       {
-        title: 'Implementing Role-Based Access Control',
-        author: 'Jane Doe',
+        title: 'Реализация управления доступом на основе ролей (RBAC)',
+        author: 'Джейн Доу',
         content:
-          'RBAC is essential for managing permissions and security in applications.',
+          'RBAC необходим для управления разрешениями и безопасности в приложениях.',
       },
       {
-        title: 'Using Elasticsearch for Full-Text Search',
-        author: 'John Smith',
+        title: 'Использование Elasticsearch для полнотекстового поиска',
+        author: 'Джон Смит',
         content:
-          'Elasticsearch is ideal for implementing full-text search and analytics.',
+          'Elasticsearch идеально подходит для реализации полнотекстового поиска и аналитики.',
       },
       {
-        title: 'Load Balancing with NGINX',
-        author: 'Alice Johnson',
+        title: 'Балансировка нагрузки с помощью NGINX',
+        author: 'Алиса Джонсон',
         content:
-          'NGINX is a high-performance load balancer often used in distributed applications.',
+          'NGINX — это высокопроизводительный балансировщик нагрузки, часто используемый в распределённых приложениях.',
       },
       {
-        title: 'Monitoring Applications with Prometheus',
-        author: 'Bob Brown',
+        title: 'Мониторинг приложений с Prometheus',
+        author: 'Боб Браун',
         content:
-          'Prometheus is used to monitor and alert on application performance metrics.',
+          'Prometheus используется для мониторинга и оповещения о метриках производительности приложений.',
       },
       {
-        title: 'Building REST APIs with Express.js',
-        author: 'Carol White',
+        title: 'Создание REST API с использованием Express.js',
+        author: 'Кэрол Уайт',
         content:
-          'Express.js is a popular Node.js framework for building RESTful APIs.',
+          'Express.js — это популярный фреймворк для Node.js для создания RESTful API.',
       },
-      {
-        title: 'Setting up PostgreSQL with Node.js',
-        author: 'Eve Black',
-        content:
-          'PostgreSQL is a powerful, open-source database widely used in production.',
-      },
-      {
-        title: 'Introduction to RabbitMQ',
-        author: 'Frank Green',
-        content:
-          'RabbitMQ is a message broker that facilitates communication between services.',
-      },
-      {
-        title: 'Implementing OAuth 2.0 in Node.js',
-        author: 'Grace Blue',
-        content:
-          'OAuth 2.0 is a protocol for authorization used to secure APIs and web applications.',
-      },
-      {
-        title: 'Data Encryption with Node.js',
-        author: 'Hank Brown',
-        content:
-          'Learn how to encrypt and secure data in Node.js applications.',
-      },
-      {
-        title: 'Error Handling in NestJS',
-        author: 'Ivy White',
-        content:
-          'Effective error handling improves reliability and user experience.',
-      },
-      {
-        title: 'Optimizing Docker Images for Production',
-        author: 'Jane Doe',
-        content:
-          'Creating lightweight, secure Docker images is crucial for production environments.',
-      },
-      {
-        title: 'REST vs GraphQL Performance Comparison',
-        author: 'John Smith',
-        content:
-          'Explore the performance differences between REST and GraphQL APIs.',
-      },
-      {
-        title: 'Deploying Applications to AWS',
-        author: 'Alice Johnson',
-        content:
-          'AWS provides a reliable and scalable infrastructure for deploying web applications.',
-      },
-      {
-        title: 'Building Serverless Applications with AWS Lambda',
-        author: 'Bob Brown',
-        content:
-          'AWS Lambda enables serverless architecture for reducing costs and improving scalability.',
-      },
-      {
-        title: 'Working with Webhooks',
-        author: 'Carol White',
-        content:
-          'Webhooks allow applications to communicate with each other in real-time.',
-      },
-      {
-        title: 'Using Git for Version Control',
-        author: 'Eve Black',
-        content:
-          'Git is essential for collaboration and version management in software projects.',
-      },
-      {
-        title: 'Intro to API Rate Limiting',
-        author: 'Frank Green',
-        content:
-          'Rate limiting helps prevent abuse and protect application resources.',
-      },
-      {
-        title: 'Database Indexing for Performance',
-        author: 'Grace Blue',
-        content:
-          'Indexes improve query performance but require careful management.',
-      },
-      {
-        title: 'Handling Concurrency in Node.js',
-        author: 'Hank Brown',
-        content:
-          'Learn how to manage concurrency in Node.js applications for better performance.',
-      },
-      {
-        title: 'Introduction to Microservices Architecture',
-        author: 'Ivy White',
-        content:
-          'Microservices architecture breaks down applications into modular, scalable services.',
-      },
-      // ... продолжение данных до 100 статей
     ];
 
     // Функция для генерации случайной даты в пределах последних 100 дней
